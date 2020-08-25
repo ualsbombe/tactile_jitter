@@ -1,0 +1,20 @@
+Executing following command on 1 threads:
+./subject_0002.sh
+./subject_0002.sh: line 1: !/bin/bash: No such file or directory
+./subject_0002.sh: line 2: $: command not found
+
+mne_surf2bem version 1.6 compiled at Dec 21 2009 19:47:09
+
+input  file #   1 : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0002/surf/lh.seghead / id = 4 / sigma N/A
+output file       : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0002/bem/0002-head-dense.fif
+
+New quad file : nvert = 255053 nquad = 258058
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[1544196 distances done]
+	Warning: 3243 vertices had incorrect number of distinct neighbors (fixed).
+/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0002/surf/lh.seghead read. id = 4
+
+outer skin  CM is  -0.22  10.22 -27.46 mm
+Surfaces passed the basic topology checks.
+/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0002/bem/0002-head-dense.fif written.

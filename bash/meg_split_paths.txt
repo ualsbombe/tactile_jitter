@@ -1,0 +1,4 @@
+0006/20200120_000000/MEG/001.tactile_jitter_raw_1/files
+0006/20200120_000000/MEG/002.tactile_jitter_raw_2/files
+0010/20200122_000000/MEG/001.tactile_jitter_raw_1/files
+0010/20200122_000000/MEG/002.tactile_jitter_raw_2/files

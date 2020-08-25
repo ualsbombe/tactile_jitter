@@ -1,0 +1,7 @@
+0003
+
+1. Creating a dense scalp tessellation with mkheadsurf...
+
+
+2. Creating /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0003/bem/0003-head-dense.fif...
+Failed to create /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0003/bem/0003-head-dense.fif, see above

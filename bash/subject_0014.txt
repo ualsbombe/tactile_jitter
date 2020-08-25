@@ -1,0 +1,74 @@
+0014
+
+1. Creating a dense scalp tessellation with mkheadsurf...
+
+
+2. Creating /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0014/bem/0014-head-dense.fif...
+
+3. Creating medium grade tessellation...
+
+3.1 Decimating the dense tessellation...
+Hyades detected. Using software rendering
+Hyades detected. Matlab is limited to a single computational thread
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2016 The MathWorks, Inc.
+                   R2016b (9.1.0.441655) 64-bit (glnxa64)
+                             September 7, 2016
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+[Warning: Name is nonexistent or not a directory:
+/users/lau/MNE-2.7.0-3106-Linux-x86_64/matlab/toolbox] 
+[> In path (line 109)
+  In mne_setup_toolbox (line 48)] 
+/users/lau/MNE-2.7.0-3106-Linux-x86_64/matlab/toolbox added to path
+[Warning: Name is nonexistent or not a directory:
+/users/lau/MNE-2.7.0-3106-Linux-x86_64/matlab/examples] 
+[> In path (line 109)
+  In mne_setup_toolbox (line 58)] 
+/users/lau/MNE-2.7.0-3106-Linux-x86_64/matlab/examples added to path
+Reading /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0014/surf/lh.seghead...
+	/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0014/surf/lh.seghead is a new quad file (nvert = 238824 nquad = 241672)
+	Read a surface with 238824 vertices and 483344 triangles from /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0014/surf/lh.seghead
+Reducing the number of triangles...[done]
+After reduction: 13617 vertices and 30000 triangles
+	Wrote the surface file /tmp/27449 with 13617 vertices and 30000 triangles
+
+3.2 Creating /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0014/bem/0014-head-medium.fif...
+
+4. Creating the sparse tessellation...
+
+4.1 Decimating the dense tessellation...
+Hyades detected. Using software rendering
+Hyades detected. Matlab is limited to a single computational thread
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2016 The MathWorks, Inc.
+                   R2016b (9.1.0.441655) 64-bit (glnxa64)
+                             September 7, 2016
+
+ 
+For online documentation, see http://www.mathworks.com/support
+For product information, visit www.mathworks.com.
+ 
+[Warning: Name is nonexistent or not a directory:
+/users/lau/MNE-2.7.0-3106-Linux-x86_64/matlab/toolbox] 
+[> In path (line 109)
+  In mne_setup_toolbox (line 48)] 
+/users/lau/MNE-2.7.0-3106-Linux-x86_64/matlab/toolbox added to path
+[Warning: Name is nonexistent or not a directory:
+/users/lau/MNE-2.7.0-3106-Linux-x86_64/matlab/examples] 
+[> In path (line 109)
+  In mne_setup_toolbox (line 58)] 
+/users/lau/MNE-2.7.0-3106-Linux-x86_64/matlab/examples added to path
+Reading /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0014/surf/lh.seghead...
+	/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0014/surf/lh.seghead is a new quad file (nvert = 238824 nquad = 241672)
+	Read a surface with 238824 vertices and 483344 triangles from /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0014/surf/lh.seghead
+Reducing the number of triangles...[done]
+After reduction: 1075 vertices and 2498 triangles
+	Wrote the surface file /tmp/27449 with 1075 vertices and 2498 triangles
+
+4.2 Creating /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0014/bem/0014-head-sparse.fif...

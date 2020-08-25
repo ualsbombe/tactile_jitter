@@ -1,0 +1,5 @@
+Executing following command on 1 threads:
+./subject_0002.sh
+./subject_0002.sh: line 1: !/bin/bash: No such file or directory
+./subject_0002.sh: line 2: $: command not found
+Done executing

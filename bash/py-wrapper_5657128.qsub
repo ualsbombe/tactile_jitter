@@ -1,0 +1,19 @@
+Executing following command on 1 threads:
+./subject_0003.sh
+
+mne_surf2bem version 1.6 compiled at Dec 21 2009 19:47:09
+
+input  file #   1 : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0003/surf/lh.seghead / id = 4 / sigma N/A
+output file       : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0003/bem/0003-head-dense.fif
+
+New quad file : nvert = 315458 nquad = 324694
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[1935132 distances done]
+	Warning: 9742 vertices had incorrect number of distinct neighbors (fixed).
+/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0003/surf/lh.seghead read. id = 4
+
+outer skin  CM is  -0.63  23.44 -37.11 mm
+Surfaces passed the basic topology checks.
+/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0003/bem/0003-head-dense.fif : No such file or directory
+Done executing

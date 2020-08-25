@@ -1,0 +1,53 @@
+Executing following command on 1 threads:
+./subject_0019.sh
+
+mne_surf2bem version 1.6 compiled at Dec 21 2009 19:47:09
+
+input  file #   1 : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0019/surf/lh.seghead / id = 4 / sigma N/A
+output file       : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0019/bem/0019-head-dense.fif
+
+New quad file : nvert = 254254 nquad = 254886
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[1528114 distances done]
+	Warning: 954 vertices had incorrect number of distinct neighbors (fixed).
+/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0019/surf/lh.seghead read. id = 4
+
+outer skin  CM is   2.39  -7.38 -18.49 mm
+Surfaces passed the basic topology checks.
+/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0019/bem/0019-head-dense.fif written.
+
+mne_surf2bem version 1.6 compiled at Dec 21 2009 19:47:09
+
+input  file #   1 : /tmp/29752 / id = 4 / sigma N/A
+output file       : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0019/bem/0019-head-medium.fif
+
+Triangle file : Triangle file written with MNE Matlab tools nvert = 14814 ntri = 30000
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[89248 distances done]
+	Warning: 47 topological defects were fixed.
+	Warning: 486 vertices had incorrect number of distinct neighbors (fixed).
+/tmp/29752 read. id = 4
+
+outer skin  CM is   3.68   3.76 -37.32 mm
+Surfaces passed the basic topology checks.
+/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0019/bem/0019-head-medium.fif written.
+
+mne_surf2bem version 1.6 compiled at Dec 21 2009 19:47:09
+
+input  file #   1 : /tmp/29752 / id = 4 / sigma N/A
+output file       : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0019/bem/0019-head-sparse.fif
+
+Triangle file : Triangle file written with MNE Matlab tools nvert = 1243 ntri = 2500
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...[done]
+	Distances between neighboring vertices...[7448 distances done]
+	Warning: 7 topological defects were fixed.
+	Warning: 31 vertices had incorrect number of distinct neighbors (fixed).
+/tmp/29752 read. id = 4
+
+outer skin  CM is   3.54   4.38 -34.36 mm
+Surfaces passed the basic topology checks.
+/projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0019/bem/0019-head-sparse.fif written.
+Done executing

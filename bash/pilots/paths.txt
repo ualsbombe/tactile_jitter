@@ -1,0 +1,5 @@
+0001/20180515_132117/MR/006.t1_mprage_3D_sag_fatsat/files/
+0002/20191015_104445/MR/005.t1_mprage_3D_sag_fatsat/files/
+0003/20191015_093141/MR/006.t1_mprage_3D_sag_fatsat/files/
+0004/20191015_112257/MR/007.t1_mprage_3D_sag_fatsat/files/
+0005/20191015_121553/MR/005.t1_mprage_3D_sag_fatsat/files/

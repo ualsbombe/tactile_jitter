@@ -1,0 +1,235 @@
+%% CLEAR AND ADD PATHS
+
+clear variables
+restoredefaultpath
+
+[~, user] = system('uname -n');
+if strcmp(user(1:(end-1)), 'lau-LIFEBOOK-E744')
+    home_dir = '/home/lau/';
+elseif strcmp(user, 'hyades02')
+    home_dir = '/users/lau/';
+else
+    disp('"User" has not been specified yet')
+end
+
+subject_index = 1;
+
+subjects = {'0001' '0002' '0003' '0004' '0005'};
+dates = {'20190923_000000' '20190930_000000' '20190930_000000' ...
+         '20191008_000000' '20191008_000000'};
+subject = subjects{subject_index};
+date = dates{subject_index};
+
+project_name = 'MINDLAB2019_MEG-CerebellarClock';
+raw_path = fullfile(home_dir, 'mounts', 'hyades', 'projects', project_name, ...
+                    'raw', ...
+                    subject, date, 'MEG', ...
+                    '001.tactile_jitter_raw', 'files');
+data_path = fullfile(home_dir, 'mounts', 'hyades', 'projects', project_name, ...
+                      'scratch', 'tactile_jitter', 'MEG', subject, date);
+figures_path = fullfile(home_dir, 'mounts', 'hyades', 'projects', ...
+                      project_name, 'scratch', 'tactile_jitter', 'figures', ...
+                      subject, date);
+fieldtrip_path = '/home/lau/matlab/fieldtrip';     
+
+addpath(fieldtrip_path)
+ft_defaults
+
+%% LOAD CLEANED DATA
+
+load(fullfile(data_path, 'cleaned_data.mat')) %% has been demeaned [-Inf Inf]
+
+%% FILTER
+
+freq_bands = [4 8; 8 13; 13 30; 55 95];% 75 95];% 105 125; 125 145];
+events = [18 92 102 256];
+n_events = length(events);
+n_freq_bands = length(freq_bands);
+filter_type = 'firws';
+transition_width = 6;
+toilim = [-1.200 1.200];
+
+% timelockeds = cell(1, n_freq_bands);
+hilberts = cell(n_events, n_freq_bands);
+
+for freq_band_index = 1:n_freq_bands
+    
+    % band pass filter
+    cfg = [];
+    cfg.hpfilter = 'yes';
+    cfg.hpfreq = freq_bands(freq_band_index, 1);
+    cfg.hpfilttype = filter_type;
+    cfg.hpfiltdf = transition_width; % transition width
+    cfg.hpfiltdir = 'onepass-zerophase';
+    
+    cfg.lpfilter = 'yes';
+    cfg.lpfreq = freq_bands(freq_band_index, 2);
+    cfg.lpfilttype = filter_type;
+    cfg.lpfiltdf = transition_width;
+    cfg.lpfiltdir = 'onepass-zerophase';
+    
+    data_bandpass = ft_preprocessing(cfg, cleaned_data);
+    
+    % cut 
+    cfg = [];
+    cfg.toilim = toilim;
+    
+    data_bandpass = ft_redefinetrial(cfg, data_bandpass);
+    
+    for event_index = 1:n_events
+        event = events(event_index);
+    
+        % timelock
+    %     cfg = [];
+    %     cfg.covariance = 'yes';
+    %     cfg.covariancewindow = 'all';
+    %     cfg.vartrllength = 2;
+
+    %     timelockeds{freq_band_index} = ft_timelockanalysis(cfg, data_bandpass);
+        
+        % select data
+        cfg = [];
+        cfg.trials = cleaned_data.trialinfo == event;
+        
+        temp = ft_selectdata(cfg, data_bandpass);
+    
+        % hilbert
+        cfg = [];
+        cfg.hilbert = 'complex';
+
+        hilberts{event_index, freq_band_index} = ft_preprocessing(cfg, temp);
+        
+    end
+    
+end
+
+%% ENVELOPES (TRIAL LEVEL)
+
+envelopes = cell(n_events, n_freq_bands);
+
+for event_index = 1:n_events
+    
+    cfg = [];
+    cfg.operation = 'abs';
+    cfg.parameter = 'trial';
+   
+    for freq_band_index = 1:n_freq_bands
+    
+        envelopes{event_index, freq_band_index} = ft_math(cfg, ...
+            hilberts{event_index, freq_band_index});
+        
+    end
+
+end
+
+%% AVERAGE
+
+avgs = cell(n_events, n_freq_bands);
+
+for freq_band_index = 1:n_freq_bands
+    
+    for event_index = 1:n_events
+        
+        avgs{event_index, freq_band_index} = ...
+            ft_timelockanalysis([], envelopes{event_index, freq_band_index});
+        
+    end
+    
+end
+
+%% CONTRAST
+% 
+% contrasts = {[1 4] [2 4] [3 4]};
+% n_contrasts = length(contrasts);
+% 
+% contrasted_hilberts = cell(n_contrasts, n_freq_bands);
+% 
+% for contrast_index = 1:n_contrasts
+%     
+%     cfg = [];
+%     cfg.operation = 'x1/x2';
+%     cfg.parameter = 'avg';
+%    
+%     for freq_band_index = 1:n_freq_bands
+%     
+%         contrasted_hilberts{contrast_index, freq_band_index} = ft_math(cfg, ...
+%             avgs{contrasts{contrast_index}(1), freq_band_index}, ...
+%             avgs{contrasts{contrast_index}(2), freq_band_index});
+%         
+%     end
+% 
+% end
+    
+
+%% ENVELOPES
+% 
+% envelopes = cell(n_events, n_freq_bands);
+% 
+% for event_index = 1:n_events
+%     
+%     cfg = [];
+%     cfg.operation = 'abs';
+%     cfg.parameter = 'avg';
+%    
+%     for freq_band_index = 1:n_freq_bands
+%     
+%         envelopes{event_index, freq_band_index} = ft_math(cfg, ...
+%             avgs{event_index, freq_band_index});
+%         
+%     end
+% 
+% end
+
+ 
+
+%% COMBINE GRADIOMETERS
+
+avgs_cmb = cell(n_events, n_freq_bands);
+
+for event_index = 1:n_events
+    for freq_band_index = 1:n_freq_bands    
+        avgs_cmb{event_index, freq_band_index} = ...
+            ft_combineplanar([], avgs{event_index, freq_band_index});
+    end
+end
+
+%% CONTRAST ENVELOPES
+
+contrasts = {[1 4] [2 4] [3 4]};
+n_contrasts = length(contrasts);
+
+contrasted_envelopes = cell(n_contrasts, n_freq_bands);
+
+for contrast_index = 1:n_contrasts
+    
+    cfg = [];
+    cfg.operation = 'x1/x2';
+    cfg.parameter = 'avg';
+   
+    for freq_band_index = 1:n_freq_bands
+    
+        contrasted_envelopes{contrast_index, freq_band_index} = ft_math(cfg, ...
+            avgs_cmb{contrasts{contrast_index}(1), freq_band_index}, ...
+            avgs_cmb{contrasts{contrast_index}(2), freq_band_index});
+        
+    end
+
+end
+%  
+   
+%% PLOT
+
+cfg = [];
+% cfg.layout = 'neuromag306planar.lay';
+cfg.layout = 'neuromag306cmb.lay';
+% cfg.ylim = [-5e-13 5e-13];
+% cfg.ylim = [-10 10];
+% cfg.ylim = [0 20];
+% cfg.xlim = [-1.000 1.000];
+cfg.ylim = [0.80 1.20];
+
+figure
+ft_multiplotER(cfg, contrasted_envelopes{1, 3});
+% ft_multiplotER(cfg, envelopes{1, 1});
+% ft_multiplotER(cfg, avgs_cmb{1, 1});
+% ft_multiplotER(cfg, contrasted_hilberts{1, 1});

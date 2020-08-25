@@ -1,0 +1,12 @@
+Executing following command on 1 threads:
+./subject_0009.sh
+
+mne_surf2bem version 1.6 compiled at Dec 21 2009 19:47:09
+
+input  file #   1 : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0009/surf/lh.seghead / id = 4 / sigma N/A
+output file       : /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/freesurfer/0009/bem/0009-head-dense.fif
+
+New quad file : nvert = 311047 nquad = 315882
+	Triangle and vertex normals and neighboring triangles...[done]
+	Vertex neighbors...Too many neighbors for vertex 116214.
+Done executing

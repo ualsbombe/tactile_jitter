@@ -1,0 +1,70 @@
+Executing following command on 4 threads:
+python sensor_functions.py epoch_data 0016 20200128 0 tactile_jitter_raw_sss.fif tactile_jitter_sss-epo.fif 1 0 0 tactile_jitter-eve.fif
+b'hyades08\n'
+epoch_data
+['sensor_functions.py', 'epoch_data', '0016', '20200128', '0', 'tactile_jitter_raw_sss.fif', 'tactile_jitter_sss-epo.fif', '1', '0', '0', 'tactile_jitter-eve.fif']
+Overwriting: /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/MEG/0016/20200128_000000/tactile_jitter_sss-epo.fif
+Opening raw data file /projects/MINDLAB2019_MEG-CerebellarClock/scratch/tactile_jitter/MEG/0016/20200128_000000/tactile_jitter_raw_sss.fif...
+    Range : 104000 ... 1655999 =    104.000 ...  1655.999 secs
+Ready.
+Opening raw data file /scratch5/MINDLAB2019_MEG-CerebellarClock/tactile_jitter/MEG/0016/20200128_000000/tactile_jitter_raw_sss-1.fif...
+    Range : 1656000 ... 3207999 =   1656.000 ...  3207.999 secs
+Ready.
+Opening raw data file /scratch5/MINDLAB2019_MEG-CerebellarClock/tactile_jitter/MEG/0016/20200128_000000/tactile_jitter_raw_sss-2.fif...
+    Range : 3208000 ... 4759999 =   3208.000 ...  4759.999 secs
+Ready.
+Opening raw data file /scratch5/MINDLAB2019_MEG-CerebellarClock/tactile_jitter/MEG/0016/20200128_000000/tactile_jitter_raw_sss-3.fif...
+    Range : 4760000 ... 5354999 =   4760.000 ...  5354.999 secs
+Ready.
+Current compensation grade : 0
+Reading 0 ... 5250999  =      0.000 ...  5250.999 secs...
+3300 matching events found
+Applying baseline correction (mode: mean)
+Not setting metadata
+Overwriting existing file.
+Loading data for 3300 events and 801 original time points ...
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on MAG : ['MEG1411']
+    Rejecting  epoch based on MAG : ['MEG0121', 'MEG1221', 'MEG1411', 'MEG1421']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on MAG : ['MEG1411']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on MAG : ['MEG0141', 'MEG1421', 'MEG1431', 'MEG2621']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on MAG : ['MEG1331']
+    Rejecting  epoch based on MAG : ['MEG1331', 'MEG2421']
+    Rejecting  epoch based on MAG : ['MEG1321', 'MEG1331']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG002']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on MAG : ['MEG0111', 'MEG0141', 'MEG1421', 'MEG1431']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on EOG : ['EOG001']
+    Rejecting  epoch based on MAG : ['MEG1421', 'MEG1431']
+    Rejecting  epoch based on EOG : ['EOG001']
+38 bad epochs dropped
+Loading data for 1 events and 801 original time points ...
+Loading data for 1631 events and 801 original time points ...
+Loading data for 1631 events and 801 original time points ...
+sensor_functions.py:235: DeprecationWarning: overwrite defaults to True in 0.18 but will change to False in 0.19, set it explicitly to avoid this warning
+  epochs.save(save_path)
+Done executing
